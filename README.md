@@ -12,6 +12,11 @@ Portable agent skills for git workflows and writing style.
 | [clean-commit-storyline](clean-commit-storyline/SKILL.md) | Rewriting a branch with a clean, narrative commit history |
 | [scottify](scottify/SKILL.md) | Writing or rewriting text in Scott's voice |
 
+The scottify skill includes a `references/` folder (phrases, structures, examples)
+adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) by Hardik Pandya
+(MIT). Scott's writing samples override stop-slop where they conflict; see the override
+table in [scottify/SKILL.md](scottify/SKILL.md).
+
 Each git skill resolves the repo's commit conventions at runtime — from agent docs,
 machine config, git history, or Conventional Commits as a fallback — so the same
 skill folder works across repos without hard-wiring ticket formats or tooling.

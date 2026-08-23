@@ -14,6 +14,19 @@ git commit history suitable for reviewer comprehension.
 **New branch name**: Use the branch name provided by the user if given, otherwise
 `{source_branch}-clean`.
 
+## Related skills
+
+This skill borrows from two others when they are available alongside it. Neither
+is required — the guidance below stands on its own if a sibling folder is
+missing.
+
+- **[create-commit](../create-commit/SKILL.md)** owns message form: the header
+  shape, types, description mood, scope, ticket placement, body, and the
+  never-include list. Follow it for every commit this workflow writes. Step 7
+  carries the two deltas specific to a replayed history.
+- **[create-branch](../create-branch/SKILL.md)** owns branch naming and ref
+  validation. Step 4 applies its validation checks to the clean branch name.
+
 ## Resolve the contract
 
 Before drafting, establish this repo's conventions. First tier that answers wins.
@@ -75,11 +88,27 @@ add ticket keys that were not on the original branch unless the user asks.
 
 4. **Create the clean branch off `origin/<base>`**
 
+   Validate the name first, per
+   [create-branch](../create-branch/SKILL.md) step 4 — `{source_branch}-clean`
+   can collide with a branch from an earlier run, and a source branch whose name
+   is already near the ref length limit produces an awkward one:
+
    ```bash
-   git checkout -b <new-branch> origin/<base>
+   git check-ref-format --branch "<new-branch>"
+   git rev-parse --verify --quiet "refs/heads/<new-branch>"
+   ```
+
+   The second must print nothing. Then cut it:
+
+   ```bash
+   git switch -c "<new-branch>" --no-track origin/<base>
    ```
 
    Never branch from a local base without fetching first — it may be stale.
+   `--no-track` matters for the same reason it does in create-branch: without
+   it, branching off a remote-tracking ref sets the clean branch's upstream to
+   `origin/<base>`, so `git status` reports the replayed commits as ahead of the
+   base and the push target is aimed at the wrong branch.
 
 5. **Plan the commit storyline**
    - Each commit must touch only one of: a single component directory, a single
@@ -106,8 +135,10 @@ add ticket keys that were not on the original branch unless the user asks.
 
 7. **Commit message contract**
 
-   The contract loaded in step 1 governs message format. Two additions specific to
-   this workflow:
+   The contract loaded in step 1 governs message format, shaped as
+   [create-commit](../create-commit/SKILL.md) describes under Message form —
+   header, types, description, scope, ticket placement, body, breaking changes,
+   and what never belongs in a message. Two additions specific to this workflow:
 
    - Each subject describes only the single concern its commit touches (step 5).
      If a subject needs "and" to be accurate, the commit should have been split.
@@ -150,9 +181,12 @@ add ticket keys that were not on the original branch unless the user asks.
 
 ## Rules
 
-- Never add yourself as an author or contributor.
-- Never include "Generated with Cursor", "Co-Authored-By", or "Made-with: Cursor"
-  lines in commits.
+- Never add yourself as an author or contributor, and never include "Generated
+  with Cursor", "Co-Authored-By", or "Made-with: Cursor" lines — per
+  create-commit's Never include list, which also rules out the process
+  commentary this workflow invites ("split out from the previous commit",
+  "dropped unrelated diffs"). Every replayed commit reads as though it were
+  written when the work was done.
 - The end state of the clean branch must be byte-identical to the source branch.
 - **Never run `git stash --include-untracked` or `git stash -u`.** If a stash is
   required, scope it to project paths only:

@@ -15,6 +15,23 @@ commit"). If the request is ambiguous, ask first.
 This skill covers the mechanics of getting a commit made. Message content follows
 the resolved contract below.
 
+## Related skills
+
+A branch, its commits, and its PR share one vocabulary — the same type, the same
+ticket, the same description rendered for each form. These skills own the other
+ends of it when they are available alongside this one; the guidance here stands
+on its own if a sibling folder is missing.
+
+- **[create-branch](../create-branch/SKILL.md)** cut the branch these commits
+  land on, and its name is where the ticket key usually comes from. It also
+  carries the branch/header comparison table.
+- **[create-pr](../create-pr/SKILL.md)** derives its PR profile from the types on
+  these commit subjects, so a `chore` that should have been a `fix` picks the
+  wrong PR template downstream.
+- **[clean-commit-storyline](../clean-commit-storyline/SKILL.md)** replays a
+  finished branch into a narrative history, using this skill's message form for
+  every commit it writes.
+
 ## Resolve the contract
 
 Before drafting, establish this repo's conventions. First tier that answers wins.
@@ -50,7 +67,9 @@ Whether that is required comes from the resolved contract — not from this skil
 
 **When the contract expects a ticket:** include the reference in the commit message
 per the contract (inline in the subject or in the footer). Take the key from the
-branch name when the branch encodes one; otherwise ask the user. Do not invent keys.
+branch name when the branch encodes one — [create-branch](../create-branch/SKILL.md)
+describes the shape it puts there, a bare uppercase key with no brackets.
+Otherwise ask the user. Do not invent keys.
 
 **When the work is ticketless:** omit the ticket reference entirely, or use whatever
 ticketless marker the contract allows (some repos define one for trivial changes).
@@ -263,7 +282,9 @@ git status
 git log -1 --format=full
 ```
 
-Report the resulting subject and confirm the tree is clean.
+Report the resulting subject and confirm the tree is clean. When the branch is
+ready for review, [create-pr](../create-pr/SKILL.md) reads these subjects to pick
+its profile and title.
 
 ## Git safety
 

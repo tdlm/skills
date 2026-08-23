@@ -161,6 +161,16 @@ Everyday writing (the interview samples) is the default for email, Slack, docs, 
 
 **Embedded mode.** Another task is using this skill as a step. Output only the final text.
 
+The host task owns structure; this skill owns wording. Leave its headings,
+section set, bullet form, labels, link targets, and any marker or template blocks
+alone, and rewrite the sentences inside them. Where the host mandates a
+punctuation pattern as markup — `**Bold lead** — explanation` in a PR body, for
+example — that pattern is structure, so the hard rules here apply to the prose
+and not to the scaffolding around it. Rewrite only the parts the host names;
+bullet lists that read as structured data lose more in scannability than they
+gain in voice. [create-pr](../create-pr/SKILL.md) step 5 is the worked example of
+a host setting those boundaries.
+
 ## Quick contrast
 
 Banned (AI reframe):

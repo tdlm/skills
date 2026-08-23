@@ -12,6 +12,19 @@ description: >-
 Derive the branch name from the resolved commit contract, then cut the branch.
 This skill covers how to derive the name and how to cut it.
 
+## Related skills
+
+A branch, its commits, and its PR share one vocabulary — the same type, the same
+ticket, the same description compressed differently for each. These skills own
+the other ends of it when they are available alongside this one; the guidance
+here stands on its own if a sibling folder is missing.
+
+- **[create-commit](../create-commit/SKILL.md)** renders that vocabulary as a
+  message header. The branch/header comparison below is the translation between
+  the two forms.
+- **[create-pr](../create-pr/SKILL.md)** reads the type back off the branch
+  prefix to pick a PR profile, which is why the short form matters.
+
 ## Resolve the contract
 
 Before drafting, establish this repo's conventions. First tier that answers wins.
@@ -73,6 +86,9 @@ chore/update-dependencies
 
 ### How it differs from a header
 
+Same parts, different punctuation. The header form and its rules live in
+[create-commit](../create-commit/SKILL.md) under Message form:
+
 | Part        | Header               | Branch             |
 | ----------- | -------------------- | ------------------ |
 | Separator   | `: ` after the type  | `/` after the type |
@@ -127,7 +143,9 @@ The same enum commits use. Two traps. The type describes the work the branch wil
 carry, not the issue type in the tracker — a "Task" is very often a `fix`. And it is the
 short form `feat`, even when history uses `feature/`.
 
-When the linter cannot decide for you:
+When the linter cannot decide for you, these are the calls it can't make —
+identical to the ones [create-commit](../create-commit/SKILL.md) documents under
+Types, since the branch and its commits take the same type:
 
 - `feat` and `fix` are for change users or API consumers notice — everything else
   is internal
@@ -226,7 +244,9 @@ git branch --show-current
 git log -1 --oneline
 ```
 
-Report the branch and the commit it starts from.
+Report the branch and the commit it starts from. Work on the branch commits with
+[create-commit](../create-commit/SKILL.md), which reuses the type and ticket
+resolved here.
 
 ## Git safety
 

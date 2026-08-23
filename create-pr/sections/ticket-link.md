@@ -16,8 +16,11 @@ The field is the bold label plus the key linked to the issue:
 
 Use whatever issue URL format the repo uses — the skill does not assume a particular
 tracker product. Parse the key from the branch name: `feat/ABC-103-footer-component`
-gives `ABC-103`, `fix/DOT-456-broken-nav` gives `DOT-456`. Some repos use `#123` or
-other shapes; follow the resolved contract.
+gives `ABC-103`, `fix/DOT-456-broken-nav` gives `DOT-456`. That segment is a bare
+uppercase key with no brackets, per
+[create-branch](../../create-branch/SKILL.md) — the bracketed form belongs to
+commit messages, so strip nothing and add nothing when lifting it. Some repos use
+`#123` or other shapes; follow the resolved contract.
 
 When the branch name carries no key, fall back to the branch's commit subjects.
 When commitlint is configured, the ticket-reference rule in the resolved contract

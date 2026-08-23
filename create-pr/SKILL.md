@@ -12,6 +12,19 @@ description: >-
 
 Commit to a **profile** before drafting. It decides which sections the body gets.
 
+## Related skills
+
+This skill reads its inputs from work the other git skills produced. They own
+those inputs when they are available alongside it; the guidance here stands on
+its own if a sibling folder is missing.
+
+- **[create-branch](../create-branch/SKILL.md)** produced the branch name that
+  profile derivation reads first, and the ticket key parsed out of it.
+- **[create-commit](../create-commit/SKILL.md)** owns the shared header form the
+  PR title uses, and wrote the commit subjects profile derivation falls back to.
+- **[scottify](../scottify/SKILL.md)** can pass over the prose sections when the
+  user wants the body in their own voice. Opt-in — see step 5.
+
 ## Resolve the contract
 
 Before drafting, establish this repo's conventions. First tier that answers wins.
@@ -73,10 +86,15 @@ it belongs on the ticket when there is one, or nowhere.
 
 Derive the type, then map it. The first source that answers wins:
 
-1. **The branch prefix** — `feat/ABC-103-footer-component` is a `feat`.
+1. **The branch prefix** — `feat/ABC-103-footer-component` is a `feat`. This is
+   the form [create-branch](../create-branch/SKILL.md) produces, and it always
+   uses the short type (`feat`, never `feature`).
 2. **The commit subjects on the branch** — when types are mixed, take the one
    describing the PR's headline outcome, by precedence: `feat` > `fix`/`revert` >
-   `refactor`/`perf`/`style` > `chore`/`ci`/`build`/`docs`/`test`.
+   `refactor`/`perf`/`style` > `chore`/`ci`/`build`/`docs`/`test`. A mistyped
+   commit misroutes the profile, so check the type against
+   [create-commit](../create-commit/SKILL.md)'s Types guidance rather than
+   trusting the subject.
 3. **The diff** — infer, then confirm with the user before drafting.
 
 | Type                                   | Profile                   |
@@ -100,8 +118,9 @@ conditional section, and the word budget per section.
 ## PR title
 
 A PR title is a single-line header with no body or footer behind it. It uses the
-shared header form from the resolved contract, with one constraint a commit subject
-doesn't have.
+shared header form from the resolved contract — the one
+[create-commit](../create-commit/SKILL.md) documents — with one constraint a
+commit subject doesn't have.
 
 When squash-and-merge is in use, the title **becomes the commit message on the
 default branch**. A sloppy title is permanent history, not a review-time detail.
@@ -164,17 +183,38 @@ In the order the template lists, reading each section's guidance first. Apply th
 include test for every conditional section, and drop the heading for any section
 that doesn't apply.
 
-### 5. Present the draft
+### 5. Voice pass, when asked
+
+Skip this step unless the user asks for the body in their own voice ("scottify
+this", "make it sound like me"). The default body voice is the conversational
+tone [body-form.md](body-form.md) describes, and that is enough for most PRs.
+
+When they do ask, run [scottify](../scottify/SKILL.md) in its embedded mode over
+the **prose only** — Description, Motivation, and Root Cause. Two boundaries:
+
+- **This skill owns structure, scottify owns wording.** Section set, headings,
+  bold metadata labels, bullet form, and marker blocks are settled here and by
+  [body-form.md](body-form.md). A voice pass rewrites sentences inside them.
+- **Bullet-lead em-dashes stay.** Scottify bans em dashes in nonfiction prose,
+  but the `**Bold lead** — explanation` pattern is this body's markup, not
+  punctuation in a sentence. Leave those in place; the ban applies to the prose
+  scottify is rewriting.
+
+Skip the bullet-heavy sections entirely. Changes, Testing, and Validation are
+close to structured data, and running a voice pass over them costs the
+scannability the bold leads exist to provide.
+
+### 6. Present the draft
 
 The title, then the full description in a single markdown code block. Name the
 profile you picked and any conditional sections you left out, so the user can
 disagree with the composition and not just the wording.
 
-### 6. Ask, then STOP
+### 7. Ask, then STOP
 
 Wait for a reply before creating anything.
 
-### 7. Validate the title, then create the PR
+### 8. Validate the title, then create the PR
 
 Only after the user confirms. Pipe the title through commitlint when configured
 and fix any violations. Skip validation when no commitlint config exists.

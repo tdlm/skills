@@ -1,8 +1,8 @@
 # skills
 
-Portable agent skills for git workflows and writing style.
+A collection of agent skills I've either developed myself or picked up from other sources: work, other skill repos, that kind of thing. What's here right now is mostly portable git workflow skills and a writing-style skill, but I'll keep adding to it.
 
-## Root skills
+## Skills
 
 | Skill | Use when |
 | ----- | -------- |
@@ -17,10 +17,10 @@ adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) by Hardik Pa
 (MIT). Scott's writing samples override stop-slop where they conflict; see the override
 table in [scottify/SKILL.md](scottify/SKILL.md).
 
-Each git skill resolves the repo's commit conventions at runtime — from agent docs,
-machine config, git history, or Conventional Commits as a fallback — so the same
+Each git skill resolves the repo's commit conventions at runtime: from agent docs,
+machine config, git history, or Conventional Commits as a fallback. The same
 skill folder works across repos without hard-wiring ticket formats or tooling.
-Ticket references are supported when the repo uses them and omitted when work is
+Ticket references show up when the repo uses them and get omitted when the work is
 ticketless; no particular issue tracker is assumed.
 
 ## How the git skills fit together
@@ -31,7 +31,7 @@ The three main skills run in order, each reading what the last one produced:
 create-branch  ->  create-commit  ->  create-pr
 ```
 
-A branch, its commits, and its PR carry one vocabulary — the same type, the same
+A branch, its commits, and its PR carry one vocabulary: the same type, the same
 ticket, the same description rendered for each form. create-branch kebabs it into
 a ref, create-commit renders it as a message header, and create-pr reads the type
 back off the branch prefix to pick a body template.
@@ -56,10 +56,3 @@ because a self-contained folder is worth more here than a single source of truth
 - **The type-disambiguation bullets**, shared by create-branch and create-commit.
   create-commit is the one that explains them; create-branch repeats them and
   links back.
-
-## `.rulesync/`
-
-The `.rulesync/` directory is a source library imported from another project. It
-contains project-specific skills, reference docs, hooks, and subagents. Mine it
-for ideas; do not edit it as part of this repo's skill set. The root skills above
-are the generic, portable versions extracted from it.

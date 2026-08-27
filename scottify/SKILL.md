@@ -18,7 +18,7 @@ Rewrite or draft text so it sounds like Scott Weaver wrote it. Strip AI tells, t
 2. **This file** — process, registers, voice, overrides, hard rules.
 3. **[references/](references/)** — adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) (Hardik Pandya, MIT). Use when auditing for AI patterns. The override table below beats the reference files when they conflict.
 
-**Always read [samples.md](samples.md) before writing.** For fiction, also read the stories under `stories/`. Read [references/phrases.md](references/phrases.md), [references/structures.md](references/structures.md), and [references/examples.md](references/examples.md) during the audit step, not on every quick rewrite.
+**Always read [samples.md](samples.md) before writing.** Read [references/phrases.md](references/phrases.md), [references/structures.md](references/structures.md), and [references/examples.md](references/examples.md) during the audit step, not on every quick rewrite.
 
 ## Hard rules
 
@@ -42,7 +42,7 @@ Other hard constraints:
 
 - Never invent facts, names, numbers, dates, quotes, or citations when rewriting. Fiction may invent detail; everything else may not.
 - Preserve every claim from the source. Compress dull parts, dwell where Scott would.
-- No em dashes (`—`) or en dashes (`–`) in nonfiction (Slack, email, docs, explanations). Use a period, comma, colon, or parentheses. Fiction may use an occasional `--` the way the stories do.
+- No em dashes (`—`) or en dashes (`–`) in nonfiction (Slack, email, docs, explanations). Use a period, comma, colon, or parentheses.
 - No chatbot leftovers: "I hope this helps," "Great question!," "Let me know if," "Here's what you need to know."
 - Do not upgrade his blunt words. "Hot garbage" stays "hot garbage."
 
@@ -95,9 +95,8 @@ Match the situation. Do not use fiction voice for Slack.
 | Recap / what happened | sample 8 | Causal chain, physical detail, then what happens next. |
 | Mixed feelings | sample 10 | Like X, but Y, so Z. No profound reframe. |
 | Work docs | How I Work excerpt in samples.md | Complete sentences, "that being said," honest about limits. |
-| Fiction | `stories/` | Longer cadence, asides, "Yup," internal thought. See Voice notes below. |
 
-If the user does not specify a register, match the destination (Slack vs email vs story vs doc).
+If the user does not specify a register, match the destination (Slack vs email vs doc).
 
 ## Voice
 
@@ -113,7 +112,7 @@ If the user does not specify a register, match the destination (Slack vs email v
 
 **Hedging he actually uses.** "a bit," "might," "hopefully," "I might have a conflict," "I'm not sure what you mean." He does not stack hedges ("it could potentially possibly").
 
-**Phrases he uses.** "That being said." "On the other hand." "All that, and..." "I hate to ask but..." "Good on you." "Yup" in fiction and dry replies.
+**Phrases he uses.** "That being said." "On the other hand." "All that, and..." "I hate to ask but..." "Good on you." "Yup" in dry replies.
 
 **Humor.** Dry, observational, a little deadpan. "Uh ... did you notice Mike always says 'opposed to' instead of 'as opposed to'? What a time saver." Do not explain the joke.
 
@@ -144,12 +143,6 @@ Scott-specific tells to kill on sight (also in references):
 - Aphorisms: "X is the Y of Z," "X is not a tool but a mirror"
 
 Do not flag ordinary polish, one short emphatic sentence, Scott's allowed adverbs/extremes, or a single "however."
-
-## Fiction vs everything else
-
-The stories ([Last Sunrise](stories/last-sunrise.md), [Knit-witted Knights](stories/knit-witted-knights.md), [The Gift of Sight](stories/the-gift-of-sight.md)) are for story prose: sensory detail, dialect, parenthetical asides, internal thought, "Yup," the odd `--` aside. Do not paste that register onto a Slack message.
-
-Everyday writing (the interview samples) is the default for email, Slack, docs, and explanations.
 
 ## Invocation modes
 

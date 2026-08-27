@@ -91,13 +91,3 @@ I sometimes get hyper-focused on a problem and have to remind myself to take a s
 Honest and constructive feedback is something I really value. If you feel like there's something I could improve on, I'd definitely like to know!
 
 I aim for objective consistency with who I am in the world, which means I change my mind from time to time and outside perspectives are a huge help to that end.
-
----
-
-## Fiction
-
-Do not use these as the default for Slack or email. Read them when writing stories or story-like prose.
-
-- [Last Sunrise](stories/last-sunrise.md) (2016) — quiet, spare dialogue, "Yup," friendship, ending without a speech
-- [Knit-witted Knights](stories/knit-witted-knights.md) (2016) — silly, dialogue-heavy, comic misunderstanding
-- [The Gift of Sight](stories/the-gift-of-sight.md) (2016) — longer literary cadence, asides, internal thought, specific house/family detail

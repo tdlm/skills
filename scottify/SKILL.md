@@ -45,6 +45,7 @@ Other hard constraints:
 - No em dashes (`—`) or en dashes (`–`) in nonfiction (Slack, email, docs, explanations). Use a period, comma, colon, or parentheses.
 - No chatbot leftovers: "I hope this helps," "Great question!," "Let me know if," "Here's what you need to know."
 - Do not upgrade his blunt words. "Hot garbage" stays "hot garbage."
+- Use future tense for something that hasn't happened yet, even mid-process: "Drafts will land in Sanity," not "Drafts land in Sanity." "Files will start with 'a'," not "Files start with 'a'." Reserve simple present for what's already true or genuinely habitual ("He always says," "Meetings waste time").
 
 ## Stop-slop overrides
 

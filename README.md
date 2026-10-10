@@ -10,6 +10,7 @@ A collection of agent skills I've either developed myself or picked up from othe
 | [create-commit](create-commit/SKILL.md) | Staging changes, drafting commit messages, and committing |
 | [create-pr](create-pr/SKILL.md) | Opening a pull request, drafting a PR description, or fixing a PR title |
 | [clean-commit-storyline](clean-commit-storyline/SKILL.md) | Rewriting a branch with a clean, narrative commit history |
+| [ship-changes](ship-changes/SKILL.md) | Taking work in progress to an open PR in one go: branch, commit, push, PR |
 | [scottify](scottify/SKILL.md) | Writing or rewriting text in Scott's voice |
 
 The scottify skill includes a `references/` folder (phrases, structures, examples)
@@ -41,6 +42,13 @@ before the PR: it replays a messy branch into a narrative history, using
 create-commit's message form and create-branch's ref validation.
 [scottify](scottify/SKILL.md) is opt-in inside create-pr, for a PR body in
 Scott's voice.
+
+[ship-changes](ship-changes/SKILL.md) runs the whole chain as one job, behind
+two confirmations: one for the branch and commits, one for the PR before it
+pushes. It picks a single commit for one concern and a storyline-style series
+for several, and hands a branch with messy history to clean-commit-storyline.
+It defers to the other skills for every rule and resolves the contract once
+for all three steps, so it doesn't carry its own copy of the tier ladder.
 
 Each skill names these relationships in a "Related skills" section and links with
 relative sibling paths (`../create-commit/SKILL.md`), which resolve wherever the

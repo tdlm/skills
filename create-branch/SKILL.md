@@ -24,6 +24,8 @@ here stands on its own if a sibling folder is missing.
   the two forms.
 - **[create-pr](../create-pr/SKILL.md)** reads the type back off the branch
   prefix to pick a PR profile, which is why the short form matters.
+- **[ship-changes](../ship-changes/SKILL.md)** runs this skill as the first step
+  of a branch → commit → PR sequence.
 
 ## Resolve the contract
 

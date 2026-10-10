@@ -24,6 +24,8 @@ its own if a sibling folder is missing.
   PR title uses, and wrote the commit subjects profile derivation falls back to.
 - **[scottify](../scottify/SKILL.md)** can pass over the prose sections when the
   user wants the body in their own voice. Opt-in — see step 5.
+- **[ship-changes](../ship-changes/SKILL.md)** runs this skill as the last step
+  of a branch → commit → PR sequence, and pushes the branch before step 8.
 
 ## Resolve the contract
 

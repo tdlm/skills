@@ -26,6 +26,9 @@ missing.
   carries the two deltas specific to a replayed history.
 - **[create-branch](../create-branch/SKILL.md)** owns branch naming and ref
   validation. Step 4 applies its validation checks to the clean branch name.
+- **[ship-changes](../ship-changes/SKILL.md)** borrows this skill's step 5 rules
+  to split uncommitted work into a series, and runs it as written when a branch
+  with messy history needs a PR.
 
 ## Resolve the contract
 

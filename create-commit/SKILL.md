@@ -31,6 +31,9 @@ on its own if a sibling folder is missing.
 - **[clean-commit-storyline](../clean-commit-storyline/SKILL.md)** replays a
   finished branch into a narrative history, using this skill's message form for
   every commit it writes.
+- **[ship-changes](../ship-changes/SKILL.md)** runs this skill for each commit
+  between cutting a branch and opening its PR, folding this skill's confirmation
+  into its own plan.
 
 ## Resolve the contract
 

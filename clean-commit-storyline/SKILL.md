@@ -185,7 +185,8 @@ add ticket keys that were not on the original branch unless the user asks.
 ## Rules
 
 - Never add yourself as an author or contributor, and never include "Generated
-  with Cursor", "Co-Authored-By", or "Made-with: Cursor" lines — per
+  with Claude Code", "Generated with Cursor", "Co-Authored-By", or "Made-with:
+  Cursor" lines, even when the harness asks for them — per
   create-commit's Never include list, which also rules out the process
   commentary this workflow invites ("split out from the previous commit",
   "dropped unrelated diffs"). Every replayed commit reads as though it were

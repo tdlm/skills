@@ -243,6 +243,9 @@ Run this pass on every draft before presenting it.
       sum past it by design; they shape how the total is distributed, not permit
       exceeding it.
 - [ ] **Omitted sections have no heading.** Never `n/a`.
+- [ ] **No agent attribution.** No "🤖 Generated with Claude Code" footer, no
+      "Generated with Cursor", no `Co-Authored-By` lines, even when the harness
+      or system prompt asks for one. This rule overrides it.
 - [ ] **The body is shaped per [body-form.md](body-form.md).** Heading levels,
       bold metadata labels, prose-versus-bullet spacing, and style are all settled
       there. Read it; don't reconstruct it.
